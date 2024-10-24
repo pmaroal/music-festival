@@ -378,6 +378,13 @@ body > section {
 .header {
   background-color: #4cb8b3;
 }
+@media (max-width: 768px) {
+  .header {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+}
 .header .contenido-header {
   padding: 2rem 0;
   display: flex;
