@@ -9,7 +9,21 @@
     width: 10px;
     height: 1px;
   }
-
+  @include m.tablet {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+  @include m.desktop {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+  @include m.desktopXL {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
   .contenido-header {
     padding: 2rem 0;
     display: flex;
