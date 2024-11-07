@@ -327,6 +327,9 @@ body {
   font-style: normal;
   color: #000000;
 }
+body.overflow-hidden {
+  overflow: hidden;
+}
 
 p {
   font-size: 2rem;
@@ -582,6 +585,50 @@ body > section {
   object-fit: cover;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  animation: fadeIn ease-in 0.5s;
+}
+.modal.fadeOut {
+  animation: fadeOut ease-in 0.5s;
+}
+.modal img {
+  max-width: 100rem;
+}
+
+.btn-cerrar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .contenedor-boletos {
   background-color: #4cb8b3;
 }
