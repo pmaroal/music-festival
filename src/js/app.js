@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   navegacionFija();
   crearGaleria();
+  resaltarEnlace();
 });
 function navegacionFija() {
   const header = document.querySelector(".header");
@@ -14,7 +15,6 @@ function navegacionFija() {
     }
   });
 }
-
 function crearGaleria() {
   const CANTIDAD_IMAGENES = 16;
   const galeria = document.querySelector(".galeria-imagenes");
@@ -64,4 +64,25 @@ function cerrarModal() {
     const body = document.querySelector("body");
     body.classList.remove("overflow-hidden");
   }, 500);
+}
+function resaltarEnlace() {
+  document.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navegacion-principal a");
+    let actual = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        actual = section.id;
+      }
+    });
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === "#" + actual) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
 }
