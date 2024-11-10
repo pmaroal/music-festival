@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   crearGaleria();
 });
 function navegacionFija() {
-  const header = document.querySelector("header");
+  const header = document.querySelector(".header");
   const sobreFestival = document.querySelector(".sobre-festival");
 
   window.addEventListener("scroll", function () {
     if (sobreFestival.getBoundingClientRect().bottom < 1) {
-      header.classList.add;
+      header.classList.add("fixed");
     } else {
       header.classList.remove("fixed");
     }
