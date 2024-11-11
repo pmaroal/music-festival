@@ -93,9 +93,9 @@ function scrollNav() {
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      const sectionScroll = e.target.getAtribute("href");
+      const sectionScroll = e.target.getAttribute("href");
       const section = document.querySelector(sectionScroll);
-
+      console.log(section);
       section.scrollIntoView({ behavior: "smooth" });
     });
   });
