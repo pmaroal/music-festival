@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navegacionFija();
   crearGaleria();
   resaltarEnlace();
+  scrollNav();
 });
 function navegacionFija() {
   const header = document.querySelector(".header");
@@ -78,11 +79,24 @@ function resaltarEnlace() {
       }
     });
     navLinks.forEach((link) => {
+      link.classList.remove("active");
+
       if (link.getAttribute("href") === "#" + actual) {
         link.classList.add("active");
-      } else {
-        link.classList.remove("active");
       }
+    });
+  });
+}
+function scrollNav() {
+  const navLinks = document.querySelectorAll(".navegacion-principal a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const sectionScroll = e.target.getAtribute("href");
+      const section = document.querySelector(sectionScroll);
+
+      section.scrollIntoView({ behavior: "smooth" });
     });
   });
 }
