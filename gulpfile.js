@@ -7,17 +7,19 @@ import gulpSass from "gulp-sass";
 
 const sass = gulpSass(dartSass);
 
+import terser from "gulp-terser";
+
 import sharp from "sharp";
 
 export function js(done) {
-  src("src/js/app.js").pipe(dest("build/js"));
+  src("src/js/app.js").pipe(terser()).pipe(dest("build/js"));
 
   done();
 }
 
 export function css(done) {
   src("src/scss/app.scss")
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(dest("build/css"));
 
   done();
