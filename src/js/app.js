@@ -24,7 +24,7 @@ function crearGaleria() {
     imagen.loading = "lazy";
     imagen.width = "300";
     imagen.height = "200";
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
+    imagen.src = `src/img/gallery/thumb/${i}.jpg`;
     imagen.alt = `Imagen Galeria ${i}`;
 
     //Event handler, accion de responder a un evento del usuario
